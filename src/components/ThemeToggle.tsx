@@ -25,7 +25,7 @@ const ThemeToggle = () => {
     <motion.button
       whileTap={{ scale: 0.9 }}
       onClick={() => setDark(!dark)}
-      className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+      className="cursor-pointer p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
       aria-label="Toggle theme"
     >
       {dark ? <Sun className="w-4 h-4 text-primary" /> : <Moon className="w-4 h-4 text-primary" />}

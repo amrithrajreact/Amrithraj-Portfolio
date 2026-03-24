@@ -83,7 +83,7 @@ const Navbar = () => {
             <ThemeToggle />
           </div>
           <button
-            className="sm:hidden text-foreground p-2"
+            className="sm:hidden cursor-pointer text-foreground p-2"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >

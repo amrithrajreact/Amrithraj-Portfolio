@@ -63,9 +63,7 @@ const ContactSection = () => {
 
         {/* Footer */}
         <div className="mt-24 pt-8 border-t border-border/30 text-center">
-          {/* <p className="text-muted-foreground text-sm">
-            © 2026 Amrithraj Nalam. Crafted with precision.
-          </p> */}
+         
            <p className="text-muted-foreground text-sm">
     © {new Date().getFullYear()} Amrithraj Nalam. Crafted with precision.
   </p>
