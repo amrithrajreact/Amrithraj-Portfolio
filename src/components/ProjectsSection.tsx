@@ -2,16 +2,38 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Award, CheckCircle } from "lucide-react";
 
+/* 🚀 Product Projects (Personal / AI Builds) */
+const productProjects = [
+  {
+    title: "HealthTrack",
+    tag: "Featured",
+    overview:
+      "AI-powered family health monitoring SaaS — upload lab reports, track 26 vitals, and get intelligent insights.",
+    note: "Independently built using AI-assisted development workflows",
+    tech: ["React", "TypeScript", "Supabase", "AI", "Tailwind"],
+    features: [
+      "Upload and manage lab reports",
+      "Track 26 health vitals over time",
+      "AI-generated insights",
+      "Responsive dashboard UI",
+    ],
+    link: "https://healthtracker-ai.vercel.app/",
+    image: "Healthtrack-dashboard.png",
+  },
+];
+
+/* 🏢 Enterprise Projects */
 const projects = [
   {
     title: "Agent Onboarding Platform",
     domain: "Insurance Domain",
-    overview: "Enterprise web application designed to onboard insurance agents through structured workflows.",
+    overview:
+      "Enterprise web application designed to onboard insurance agents through structured workflows.",
     role: "Senior UI Engineer – Styling & UI architecture ownership.",
     contributions: [
       "Styled Unqork components using structured SCSS architecture",
       "Implemented pixel-perfect UI from Figma designs",
-     "Built reusable styling modules reducing future styling effort by ~30%",
+      "Built reusable styling modules reducing future styling effort by ~30%",
       "Designed layouts using CSS Grid & Flexbox",
       "Ensured desktop responsiveness (1200px–1920px)",
       "Implemented accessibility based on Unqork compatibility",
@@ -37,10 +59,10 @@ const projects = [
   {
     title: "Underwriting Metrics Dashboard & Workflows",
     domain: "Enterprise Underwriting",
-    overview: "Enterprise underwriting dashboard displaying metrics and structured workflows.",
+    overview:
+      "Enterprise underwriting dashboard displaying metrics and structured workflows.",
     role: "Senior UI Engineer – Lead Styling Contributor.",
     contributions: [
-      
       "Overcame multiple Unqork platform limitations through structured UI POCs",
       "Maintained consistent design language using existing design tokens",
       "Styled complex dashboard layouts using advanced CSS Grid systems",
@@ -52,12 +74,8 @@ const projects = [
       "Maintained desktop responsiveness and cross-browser compatibility",
       "Performed accessibility checks within platform constraints",
       "Delivered UI with minimal defects",
- ,
-     
-    
     ],
     process: [
-   
       "Performed deep feasibility validation before implementation",
       "Aligned with UXD, BA, PM, engagement & Unqork leads",
       "Presented multiple alternate UI approaches to stakeholders",
@@ -71,7 +89,7 @@ const projects = [
       "Improved dashboard usability and visual clarity for underwriting teams",
       "Recognized by Global Head and awarded Spot Award for outstanding UI contribution",
     ],
-  awards: ["Spot Award"],
+    awards: ["Spot Award"],
   },
 ];
 
@@ -84,14 +102,91 @@ const ProjectsSection = () => {
       <div className="section-container">
         <div className="glow-line mb-16" />
 
+        {/* 🔥 Main Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-4xl font-display font-bold mb-14"
         >
-          Enterprise Projects<span className="text-primary">.</span>
+          Projects<span className="text-primary">.</span>
         </motion.h2>
+
+        {/* 🚀 Product Builds */}
+        <div className="mb-16">
+          <h3 className="text-xl font-display font-semibold mb-6">
+            🚀 Product Builds
+          </h3>
+
+          <div className="space-y-10">
+            {productProjects.map((project) => (
+              <div key={project.title} className="glass-card p-6 md:p-8">
+                <div className="overflow-hidden rounded-xl mb-5 border border-white/10 shadow-lg">
+                  <img
+                    src={project.image}
+                    alt="HealthTrack Dashboard"
+                    className="w-full h-auto hover:scale-105 transition duration-500"
+                  />
+                </div>
+                <span className="text-primary text-xs uppercase tracking-wider">
+                  Personal AI Product
+                </span>
+
+                <div className="flex justify-between items-center mb-3 mt-1">
+                  <h3 className="text-foreground font-semibold text-xl">
+                    {project.title}
+                  </h3>
+
+                  <span className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">
+                    ⭐ {project.tag}
+                  </span>
+                </div>
+
+                <p className="text-muted-foreground text-sm mb-2">
+                  {project.overview}
+                </p>
+
+                <p className="text-foreground/70 text-xs italic mb-4">
+                  {project.note}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs px-2 py-1 bg-secondary rounded-md"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <ul className="space-y-1.5 mb-4">
+                  {project.features.map((f, i) => (
+                    <li key={i} className="text-sm flex gap-2">
+                      <span className="text-primary">▸</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary text-sm underline"
+                >
+                  View Live →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 🏢 Enterprise Projects */}
+        <h3 className="text-xl font-display font-semibold mb-6">
+          🏢 Enterprise Projects
+        </h3>
 
         <div className="space-y-10">
           {projects.map((project, i) => (
@@ -111,10 +206,14 @@ const ProjectsSection = () => {
                     {project.title}
                   </h3>
                 </div>
-                {project.awards.length > 0 && (
+
+                {project.awards?.length > 0 && (
                   <div className="flex gap-2 shrink-0">
                     {project.awards.map((award) => (
-                      <span key={award} className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-display">
+                      <span
+                        key={award}
+                        className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-display"
+                      >
                         <Award className="w-3 h-3" /> {award}
                       </span>
                     ))}
@@ -122,8 +221,12 @@ const ProjectsSection = () => {
                 )}
               </div>
 
-              <p className="text-muted-foreground text-sm mb-2">{project.overview}</p>
-              <p className="text-foreground/70 text-sm mb-5 italic">{project.role}</p>
+              <p className="text-muted-foreground text-sm mb-2">
+                {project.overview}
+              </p>
+              <p className="text-foreground/70 text-sm mb-5 italic">
+                {project.role}
+              </p>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
@@ -132,7 +235,10 @@ const ProjectsSection = () => {
                   </h4>
                   <ul className="space-y-1.5">
                     {project.contributions.map((c, j) => (
-                      <li key={j} className="text-muted-foreground text-sm flex gap-2">
+                      <li
+                        key={j}
+                        className="text-muted-foreground text-sm flex gap-2"
+                      >
                         <span className="text-primary mt-0.5 shrink-0">▸</span>
                         {c}
                       </li>
@@ -148,8 +254,13 @@ const ProjectsSection = () => {
                       </h4>
                       <ul className="space-y-1.5">
                         {project.process.map((p, j) => (
-                          <li key={j} className="text-muted-foreground text-sm flex gap-2">
-                            <span className="text-primary mt-0.5 shrink-0">▸</span>
+                          <li
+                            key={j}
+                            className="text-muted-foreground text-sm flex gap-2"
+                          >
+                            <span className="text-primary mt-0.5 shrink-0">
+                              ▸
+                            </span>
                             {p}
                           </li>
                         ))}
@@ -163,7 +274,10 @@ const ProjectsSection = () => {
                         </h4>
                         <ul className="space-y-1.5">
                           {project.outcomes.map((o, j) => (
-                            <li key={j} className="text-muted-foreground text-sm flex items-center gap-2">
+                            <li
+                              key={j}
+                              className="text-muted-foreground text-sm flex items-center gap-2"
+                            >
                               <CheckCircle className="w-3.5 h-3.5 text-primary shrink-0" />
                               {o}
                             </li>
