@@ -33,7 +33,7 @@ const Navbar = () => {
         ([entry]) => {
           if (entry.isIntersecting) setActiveSection(id);
         },
-        { rootMargin: "-40% 0px -55% 0px" }
+        { rootMargin: "-40% 0px -55% 0px" },
       );
       observer.observe(el);
       observers.push(observer);
@@ -45,7 +45,9 @@ const Navbar = () => {
   // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   return (
@@ -55,7 +57,9 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? "bg-background/80 backdrop-blur-md border-b border-border/30" : ""
+          scrolled
+            ? "bg-background/80 backdrop-blur-md border-b border-border/30"
+            : ""
         }`}
       >
         <div className="section-container flex items-center justify-between h-16">

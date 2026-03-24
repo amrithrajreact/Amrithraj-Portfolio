@@ -7,7 +7,11 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover opacity-40" />
+        <img
+          src={heroBg}
+          alt=""
+          className="w-full h-full object-cover opacity-40"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
       </div>
 
@@ -39,8 +43,8 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-muted-foreground text-lg md:text-xl max-w-xl leading-relaxed mb-10"
           >
-            10+ years crafting pixel-perfect, accessible, enterprise-grade web interfaces. 
-            Turning complex designs into clean, scalable UI systems.
+            10+ years crafting pixel-perfect, accessible, enterprise-grade web
+            interfaces. Turning complex designs into clean, scalable UI systems.
           </motion.p>
 
           <motion.div
@@ -64,13 +68,21 @@ const HeroSection = () => {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="flex flex-wrap gap-4 text-sm text-muted-foreground"
           >
-            <a href="mailto:amrithraj879@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a
+              href="mailto:amrithraj879@gmail.com"
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+            >
               <Mail className="w-4 h-4" /> amrithraj879@gmail.com
             </a>
             <span className="flex items-center gap-2">
               <MapPin className="w-4 h-4" /> Hyderabad, India
             </span>
-            <a href="https://www.linkedin.com/in/amrithrajnalam/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a
+              href="https://www.linkedin.com/in/amrithrajnalam/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+            >
               <Linkedin className="w-4 h-4" /> LinkedIn
             </a>
           </motion.div>
