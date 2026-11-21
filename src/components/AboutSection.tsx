@@ -25,19 +25,23 @@ const AboutSection = () => {
 
           <div className="space-y-6">
             <p className="text-foreground/80 text-lg leading-relaxed">
-              I am a Senior UI / UX Engineer with over 10 years of experience building scalable, accessible, 
-              and enterprise-grade web applications. My expertise lies in UI architecture, styling systems, 
-              and design-to-code accuracy.
+              I am a Specialist UX Engineer with 10+ years of experience building accessible,
+              responsive enterprise interfaces. I specialize in Unqork UI styling, SCSS
+              architecture and pixel-accurate Figma-to-production delivery for insurance and
+              underwriting platforms.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              I specialize in low-code platforms like Unqork, where clean CSS structure and controlled overrides 
-              are critical. I collaborate closely with clients, UX designers, business analysts, project managers, 
-              and platform leads to translate complex business requirements into pixel-perfect, maintainable, 
-              and high-quality UI solutions.
+              When I joined Aiden AI I had no Unqork experience. I completed the platform
+              training, earned the Unqork Novice Configurator badge, and grew into owning UI
+              styling and architecture for enterprise applications. I work directly with
+              clients, UX designers and business analysts, join client and design review calls,
+              and build proofs of concept when a platform has limits.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Currently focused on UI-first React engineering, accessibility-driven development, 
-              performance optimization, and building maintainable, scalable UI architectures.
+              I mentor 10 junior UX engineers and Unqork developers, and I use AI-assisted
+              development (Claude, ChatGPT, Google AI Studio) with human review of everything I
+              ship. I am open to Specialist / Lead UX Engineer and UI Architect roles in
+              enterprise, Unqork and design-system teams.
             </p>
           </div>
         </motion.div>

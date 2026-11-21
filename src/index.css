@@ -3,8 +3,10 @@
 @plugin 'tailwindcss-animate';
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @theme {
@@ -51,7 +53,12 @@ html {
     --popover-foreground: 220 20% 10%;
 
     --primary: 38 90% 45%;
-    --primary-foreground: 0 0% 100%;
+    /* Dark text on amber: white on this amber is only ~2.7:1 */
+    --primary-foreground: 220 20% 10%;
+    /* Amber for TEXT and small icons on light backgrounds (>= 4.5:1) */
+    --primary-text: 38 90% 28%;
+    --gradient-from: 38 90% 28%;
+    --gradient-to: 38 90% 38%;
 
     --secondary: 220 10% 88%;
     --secondary-foreground: 220 15% 25%;
@@ -60,14 +67,14 @@ html {
     --muted-foreground: 220 10% 40%;
 
     --accent: 38 90% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent-foreground: 220 20% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 220 10% 85%;
     --input: 220 10% 85%;
-    --ring: 38 90% 45%;
+    --ring: 38 90% 32%;
 
     --radius: 0.5rem;
 
@@ -93,12 +100,15 @@ html {
 
     --primary: 38 90% 55%;
     --primary-foreground: 220 20% 7%;
+    --primary-text: 38 90% 55%;
+    --gradient-from: 38 90% 55%;
+    --gradient-to: 43 96% 64%;
 
     --secondary: 220 15% 15%;
     --secondary-foreground: 40 20% 85%;
 
     --muted: 220 15% 13%;
-    --muted-foreground: 220 10% 50%;
+    --muted-foreground: 220 10% 58%;
 
     --accent: 38 90% 55%;
     --accent-foreground: 220 20% 7%;
@@ -143,6 +153,19 @@ html {
   ::selection {
     background: hsl(38 90% 55% / 0.3);
   }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer components {
@@ -151,7 +174,17 @@ html {
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-300;
+    background-image: linear-gradient(
+      to right,
+      hsl(var(--gradient-from)),
+      hsl(var(--gradient-to))
+    );
+    @apply bg-clip-text text-transparent;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50
+           focus:px-4 focus:py-2 focus:rounded-md focus:bg-primary focus:text-primary-foreground;
   }
 
   .glass-card {
@@ -164,6 +197,12 @@ html {
 }
 
 @layer utilities {
+  /* Keeps every existing text-primary / hover:text-primary readable on light backgrounds */
+  :root .text-primary,
+  :root .hover\:text-primary:hover {
+    color: hsl(var(--primary-text));
+  }
+
   .text-balance {
     text-wrap: balance;
   }

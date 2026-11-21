@@ -2,14 +2,19 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-  { category: "Frontend & Styling", items: ["HTML5", "CSS3", "SCSS", "Tailwind CSS", "Bootstrap 4/5", "CSS Grid & Flexbox", "React JS", "JavaScript", "jQuery"] },
-  { category: "Tools & Platforms", items: ["Unqork", "Figma", "Git & GitHub", "VS Code", "Jira", "Chrome DevTools"] },
-  { category: "Performance & Quality", items: ["Lighthouse", "GTmetrix", "Web Accessibility", "Cross-Browser Testing", "Responsive Design"] },
-  { category: "Process", items: ["Agile/Scrum", "SCSS Architecture", "Design Systems", "UI POC Development", "Mentoring"] },
+  { category: "Enterprise UI", items: ["Unqork", "UI Configuration", "Component Styling", "Controlled Overrides", "UI POC Development"] },
+  { category: "Styling & Architecture", items: ["SCSS Architecture", "CSS3", "SASS/SCSS", "CSS Grid & Flexbox", "Media Queries", "Bootstrap 4/5", "Tailwind CSS"] },
+  { category: "Front-End", items: ["HTML5", "JavaScript", "TypeScript", "React", "Material UI", "jQuery", "Git & GitHub", "Chrome DevTools"] },
+  { category: "Accessibility & Quality", items: ["WCAG", "Web Accessibility", "Responsive Design", "Cross-Browser Testing", "Lighthouse", "GTmetrix"] },
+  { category: "Design to Code & Process", items: ["Figma-to-production", "Design Systems", "Agile/Scrum", "Jira", "VS Code", "Mentoring"] },
+  { category: "AI & Productivity", items: ["AI-assisted development", "Claude", "ChatGPT", "Google AI Studio", "Prompt Engineering"] },
 ];
 
 const certifications = [
+  "Claude Academy: AI Fluency, Framework & Foundations – Anthropic",
+  "Claude 101 – Anthropic",
   "Google AI Essentials – Coursera",
+  "Generative AI Fundamentals – Databricks",
   "CSS for Designers – Uxcel",
   "Introduction to Figma – Uxcel",
   "Unqork Novice Configurator – Unqork",
@@ -45,16 +50,16 @@ const SkillsSection = () => {
               <h3 className="text-primary font-display text-sm tracking-wider uppercase mb-4">
                 {group.category}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <ul className="flex flex-wrap gap-2">
                 {group.items.map((skill) => (
-                  <span
+                  <li
                     key={skill}
                     className="px-3 py-1.5 text-sm bg-secondary text-secondary-foreground rounded-md"
                   >
                     {skill}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>
@@ -68,13 +73,13 @@ const SkillsSection = () => {
           <h3 className="text-primary font-display text-sm tracking-wider uppercase mb-4">
             Certifications
           </h3>
-          <div className="flex flex-wrap gap-3">
+          <ul className="flex flex-wrap gap-3">
             {certifications.map((cert) => (
-              <span key={cert} className="px-4 py-2 text-sm border border-border rounded-lg text-muted-foreground">
+              <li key={cert} className="px-4 py-2 text-sm border border-border rounded-lg text-muted-foreground">
                 {cert}
-              </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </motion.div>
       </div>
     </section>

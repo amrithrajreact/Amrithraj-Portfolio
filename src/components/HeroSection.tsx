@@ -5,8 +5,8 @@ import { Mail, MapPin, Linkedin, Download } from "lucide-react";
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
+      {/* Background (decorative) */}
+      <div className="absolute inset-0" aria-hidden="true">
         <img
           src={heroBg}
           alt="Hero Background"
@@ -28,7 +28,7 @@ const HeroSection = () => {
             transition={{ delay: 0.2 }}
             className="text-primary font-display text-sm tracking-[0.3em] uppercase mb-6"
           >
-            Senior UI / UX Engineer
+            Specialist UX Engineer | Unqork &amp; Enterprise UI
           </motion.p>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold leading-[0.95] mb-6">
@@ -43,8 +43,9 @@ const HeroSection = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-muted-foreground text-lg md:text-xl max-w-xl leading-relaxed mb-10"
           >
-            10+ years crafting pixel-perfect, accessible, enterprise-grade web
-            interfaces. Turning complex designs into clean, scalable UI systems.
+            10+ years building accessible, responsive enterprise interfaces.
+            Unqork UI, SCSS architecture and pixel-accurate Figma-to-production
+            delivery for insurance and underwriting platforms.
           </motion.p>
 
           <motion.div
@@ -56,9 +57,9 @@ const HeroSection = () => {
             <a
               href="/resume.pdf"
               download
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground font-display text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground font-display text-sm font-semibold rounded-lg hover:opacity-90 transition-opacity focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
-              <Download className="w-4 h-4" /> Download Resume
+              <Download className="w-4 h-4" aria-hidden="true" /> Download Resume
             </a>
           </motion.div>
 
@@ -72,10 +73,10 @@ const HeroSection = () => {
               href="mailto:amrithraj879@gmail.com"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
-              <Mail className="w-4 h-4" /> amrithraj879@gmail.com
+              <Mail className="w-4 h-4" aria-hidden="true" /> amrithraj879@gmail.com
             </a>
             <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4" /> Hyderabad, India
+              <MapPin className="w-4 h-4" aria-hidden="true" /> Hyderabad, India
             </span>
             <a
               href="https://www.linkedin.com/in/amrithrajnalam/"
@@ -83,13 +84,14 @@ const HeroSection = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-primary transition-colors"
             >
-              <Linkedin className="w-4 h-4" /> LinkedIn
+              <Linkedin className="w-4 h-4" aria-hidden="true" /> LinkedIn
             </a>
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator (decorative) */}
         <motion.div
+          aria-hidden="true"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2 }}

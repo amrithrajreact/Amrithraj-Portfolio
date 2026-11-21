@@ -14,18 +14,20 @@ const steps = [
 ];
 
 const recognition = [
-  "Excellence Award – Enterprise UI Delivery",
-  "Spot Award – Styling Quality & UI Consistency",
-  "Client appreciation for smooth user experience and low defects",
+  "Award of Excellence – UI quality and delivery",
+  "Spot Award – UI quality and delivery",
+  "Team Excellence Award",
+  "Repeated appreciation from project managers and leadership for UI quality, performance and design accuracy",
 ];
 
 const strengths = [
-  "Enterprise UI ownership",
-  "Platform-aware styling expertise",
+  "Enterprise UI ownership (Unqork)",
   "Clean, scalable SCSS architecture",
-  "Low-defect UI delivery",
-  "Strong collaboration across teams",
-  "Accessibility-focused design implementation",
+  "Pixel-accurate Figma-to-production delivery",
+  "No critical UI defects raised in UAT",
+  "Mentoring: 10 junior UX engineers and Unqork developers",
+  "Accessibility-focused implementation",
+  "AI-assisted development with human review of everything shipped",
 ];
 
 const HowIWorkSection = () => {
@@ -47,16 +49,16 @@ const HowIWorkSection = () => {
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-6">
               How I Work<span className="text-primary">.</span>
             </h2>
-            <div className="space-y-3">
+            <ol className="space-y-3">
               {steps.map((step, i) => (
-                <div key={i} className="flex gap-3 items-start">
-                  <span className="text-primary font-display text-sm font-semibold mt-0.5 shrink-0 w-5 text-right">
+                <li key={i} className="flex gap-3 items-start">
+                  <span aria-hidden="true" className="text-primary font-display text-sm font-semibold mt-0.5 shrink-0 w-5 text-right">
                     {i + 1}.
                   </span>
                   <span className="text-muted-foreground text-sm">{step}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </motion.div>
 
           {/* Recognition */}
@@ -68,14 +70,14 @@ const HowIWorkSection = () => {
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-6">
               Recognition<span className="text-primary">.</span>
             </h2>
-            <div className="space-y-3">
+            <ul className="space-y-3">
               {recognition.map((item) => (
-                <div key={item} className="flex gap-2 items-start">
-                  <Award className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <li key={item} className="flex gap-2 items-start">
+                  <Award className="w-4 h-4 text-primary mt-0.5 shrink-0" aria-hidden="true" />
                   <span className="text-muted-foreground text-sm">{item}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </motion.div>
 
           {/* What I Bring */}
@@ -87,14 +89,14 @@ const HowIWorkSection = () => {
             <h2 className="text-2xl md:text-3xl font-display font-bold mb-6">
               What I Bring<span className="text-primary">.</span>
             </h2>
-            <div className="space-y-3">
+            <ul className="space-y-3">
               {strengths.map((item) => (
-                <div key={item} className="flex gap-2 items-start">
-                  <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <li key={item} className="flex gap-2 items-start">
+                  <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" aria-hidden="true" />
                   <span className="text-muted-foreground text-sm">{item}</span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </motion.div>
         </div>
       </div>

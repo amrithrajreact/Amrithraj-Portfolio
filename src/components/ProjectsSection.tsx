@@ -8,14 +8,14 @@ const productProjects = [
     title: "HealthTrack",
     tag: "Featured",
     overview:
-      "AI-powered family health monitoring SaaS — upload lab reports, track 26 vitals, and get intelligent insights.",
-    note: "Independently built using AI-assisted development workflows",
-    tech: ["React", "TypeScript", "Supabase", "AI", "Tailwind"],
+      "AI-powered family health monitoring SaaS. Upload lab reports and track 26+ vitals over time.",
+    note: "Built independently with Claude, ChatGPT and Google AI Studio, with human review of all shipped code",
+    tech: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     features: [
       "Upload and manage lab reports",
-      "Track 26 health vitals over time",
+      "Track 26+ vitals over time",
       "AI-generated insights",
-      "Responsive dashboard UI",
+      "Accessible, responsive dashboard UI",
     ],
     link: "https://healthtracker-ai.vercel.app/",
     image: "Healthtrack-dashboard.png",
@@ -28,68 +28,81 @@ const projects = [
     title: "Agent Onboarding Platform",
     domain: "Insurance Domain",
     overview:
-      "Enterprise web application designed to onboard insurance agents through structured workflows.",
-    role: "Senior UI Engineer – Styling & UI architecture ownership.",
+      "Enterprise web application designed to onboard insurance agents through structured workflows, built on Unqork.",
+    role: "Senior UX Engineer, then Specialist UX Engineer. Owner of UI styling and architecture.",
     contributions: [
       "Styled Unqork components using structured SCSS architecture",
-      "Implemented pixel-perfect UI from Figma designs",
-      "Built reusable styling modules reducing future styling effort by ~30%",
+      "Delivered pixel-accurate UI from Figma designs",
+      "Built reusable SCSS modules that cut future styling effort by ~30%",
       "Designed layouts using CSS Grid & Flexbox",
       "Ensured desktop responsiveness (1200px–1920px)",
-      "Implemented accessibility based on Unqork compatibility",
-      "Reduced UI defects to minimal levels",
+      "Implemented accessibility within Unqork platform constraints",
     ],
     process: [
       "Pre-discovery client discussions",
       "Figma feasibility reviews",
-      "Aligned with UXD, BA, PM, engagement & Unqork leads",
+      "Aligned with UX designers, BAs, PMs and Unqork leads",
       "Built UI POCs for alternate design solutions",
       "Tracked work through Jira & Git",
     ],
     outcomes: [
-      "Achieved <5 minor UI defects during QA & UAT phases",
-      "Client-reported UI enhancements reduced by ~40% compared to previous projects",
-      "High design accuracy",
-      "Low defect rate during QA & UAT",
-      "Smooth onboarding flow improving user task completion efficiency",
-      "Recognized with Excellence Award for UI contribution",
+      "No critical UI defects raised in UAT",
+      "Passed pixel-accuracy review against Figma with minimal rework",
+      "Appreciation from project managers and leadership for UI quality and design accuracy",
+      "Recognized with the Award of Excellence",
     ],
-    awards: ["Excellence Award"],
+    awards: ["Award of Excellence"],
   },
   {
-    title: "Underwriting Metrics Dashboard & Workflows",
+    title: "Underwriting Metrics Dashboard",
     domain: "Enterprise Underwriting",
     overview:
-      "Enterprise underwriting dashboard displaying metrics and structured workflows.",
-    role: "Senior UI Engineer – Lead Styling Contributor.",
+      "Enterprise underwriting dashboard displaying metrics and structured workflows, built on Unqork.",
+    role: "Senior UX Engineer, then Specialist UX Engineer. Owner of UI styling and architecture.",
     contributions: [
-      "Overcame multiple Unqork platform limitations through structured UI POCs",
-      "Maintained consistent design language using existing design tokens",
+      "Worked around Unqork platform limitations through structured UI POCs",
+      "Maintained a consistent design language using existing design tokens",
       "Styled complex dashboard layouts using advanced CSS Grid systems",
-      "Built reusable SCSS components improving scalability",
-      "Delivered rapid UI enhancements within 24–48 hours based on client feedback",
-      "Ensured cross-browser compatibility and accessibility compliance",
-      "Improved visual hierarchy, spacing & typography consistency",
-      "Provided UI design solutions when UXD support was unavailable",
-      "Maintained desktop responsiveness and cross-browser compatibility",
-      "Performed accessibility checks within platform constraints",
-      "Delivered UI with minimal defects",
+      "Built reusable SCSS components for scalability",
+      "Improved visual hierarchy, spacing and typography consistency",
+      "Provided UI design solutions when UX design support was unavailable",
+      "Checked accessibility and cross-browser behavior within platform constraints",
     ],
     process: [
-      "Performed deep feasibility validation before implementation",
-      "Aligned with UXD, BA, PM, engagement & Unqork leads",
-      "Presented multiple alternate UI approaches to stakeholders",
-      "Collaborated closely with client teams for workflow refinement",
+      "Performed feasibility validation before implementation",
+      "Aligned with UX designers, BAs, PMs and Unqork leads",
+      "Presented alternate UI approaches to stakeholders",
+      "Joined client and UX review calls to refine workflows",
       "Iterated quickly during UAT cycles for enhancement requests",
     ],
     outcomes: [
-      "Achieved <3 minor UI defects during QA & UAT",
-      "Reduced UI enhancement turnaround time by ~50%",
-      "Received direct client appreciation for responsiveness & UI quality",
-      "Improved dashboard usability and visual clarity for underwriting teams",
-      "Recognized by Global Head and awarded Spot Award for outstanding UI contribution",
+      "No critical UI defects raised in UAT",
+      "Reduced UI enhancement turnaround by ~50% through reusable styling patterns",
+      "Direct client appreciation for responsiveness and UI quality",
+      "Awarded the Spot Award for outstanding UI contribution",
     ],
     awards: ["Spot Award"],
+  },
+  {
+    title: "UI Proofs of Concept",
+    domain: "Unqork Platform Limits",
+    overview:
+      "Custom UI components built to work around Unqork platform limits and to validate design feasibility before implementation.",
+    role: "Designed and built the proofs of concept.",
+    contributions: [
+      "Custom dropdown component",
+      "Gauge charts for dashboard metrics",
+      "Validated design feasibility against platform constraints",
+    ],
+    process: [
+      "Reviewed Figma designs against what Unqork supports",
+      "Presented working alternatives to UX designers and stakeholders",
+    ],
+    outcomes: [
+      "Unblocked designs that the platform could not deliver out of the box",
+      "Reduced rework by confirming feasibility early",
+    ],
+    awards: [] as string[],
   },
 ];
 
@@ -124,7 +137,7 @@ const ProjectsSection = () => {
                 <div className="overflow-hidden rounded-xl mb-5 border border-white/10 shadow-lg">
                   <img
                     src={project.image}
-                    alt="HealthTrack Dashboard"
+                    alt="HealthTrack dashboard showing a welcome screen with options to add a family member and upload a lab report"
                     className="w-full h-auto hover:scale-105 transition duration-500"
                   />
                 </div>
@@ -164,7 +177,7 @@ const ProjectsSection = () => {
                 <ul className="space-y-1.5 mb-4">
                   {project.features.map((f, i) => (
                     <li key={i} className="text-sm flex gap-2">
-                      <span className="text-primary">▸</span>
+                      <span className="text-primary" aria-hidden="true">▸</span>
                       {f}
                     </li>
                   ))}
